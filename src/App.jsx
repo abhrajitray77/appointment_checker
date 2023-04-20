@@ -1,3 +1,4 @@
+import Ap_list from "./components/Ap_list";
 import Banner from "./components/Banner";
 import Datepick from "./components/Datepick";
 
@@ -9,8 +10,16 @@ function App() {
           <h1 className="text-5xl font-semibold">Appointment Checker</h1>
         </div>
       </nav>
-      <Banner />
+      <main>
+        <Banner />
 
+        <section>
+          <div className="w-[50%]">
+            <Ap_list />
+
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
