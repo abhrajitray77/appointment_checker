@@ -26,9 +26,7 @@ module.exports = (client) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
-  router.get('/', (req, res) => {
-    res.send('Hello World!');
-  });
+ 
   
   
 

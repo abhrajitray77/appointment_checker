@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+//import axios from "axios";
 
 const TableComponent = () => {
   const [departments, setDepartments] = useState([]);
@@ -16,27 +16,29 @@ const TableComponent = () => {
     }
   }, [selectedDepartment]);
 
-  const fetchDepartments = () => {
-    axios
-      .get("http://localhost:5000/departments")
-      .then((response) => {
-        setDepartments(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        console.log("cant get")
-      });
+  const fetchDepartments = async () => {
+    try{
+      const response = await fetch('http://localhost:5000/departments')
+      const data = await response.json()
+        setDepartments(data);
+        console.log(data);
+      
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const fetchDoctors = (department) => {
-    axios
-      .get(`/api/doctors?department=${department}`)
-      .then((response) => {
-        setDoctors(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  //(`/api/doctors?department=${department}`)
+  //        setDoctors(response.data);
+
+  const fetchDoctors = async (department) => {
+    try{
+      const response = await fetch(`http://localhost:5000/doctors?department=${department}`)
+      const data = await response.json()
+      setDoctors(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleDepartmentClick = (departmentName) => {
