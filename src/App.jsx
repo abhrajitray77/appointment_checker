@@ -1,6 +1,6 @@
-import Ap_list from "./components/Ap_list";
+
 import Banner from "./components/Banner";
-import Datepick from "./components/Datepick";
+import TableComponent from "./components/TableList";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
 
         <section>
           <div className="w-[50%]">
-            <Ap_list />
+            <TableComponent />
 
           </div>
         </section>
