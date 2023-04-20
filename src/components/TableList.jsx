@@ -18,7 +18,7 @@ const TableComponent = () => {
 
   const fetchDepartments = () => {
     axios
-      .get("/api/departments")
+      .get("http://localhost:5000/departments")
       .then((response) => {
         setDepartments(response.data);
       })
