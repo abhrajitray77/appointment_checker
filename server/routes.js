@@ -25,10 +25,10 @@ module.exports = (client) => {
     }
   });
 
-  router.get('/availability/:docName', async (req, res) => {
+  router.get('/availability/:docId', async (req, res) => {
     try {
       const availabilityCollection = client.db('testdb').collection('availability');
-      const availability = await availabilityCollection.find({ Doc_name: req.params.docName }).toArray();
+      const availability = await availabilityCollection.find({ Doc_id: req.params.docId }).toArray();
       res.json(availability);
     } catch (err) {
       console.error(err);

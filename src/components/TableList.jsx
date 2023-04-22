@@ -44,11 +44,11 @@ const TableComponent = () => {
       console.log(error);
     }
   };
-  
+
   useEffect(() => {
     const fetchAvailableDoctors = async () => {
       try {
-        const response = await fetch(`API_URL?doc_id=${selectedDoctor.Doc_id}`);
+        const response = await fetch(`http://localhost:5000/availability/${selectedDoctor.Doc_id}`);
         const data = await response.json();
         setAvailableDoctors(data);
       } catch (error) {
