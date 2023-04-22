@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
 
-@layer base{
+  html {
+    @apply scrollbar-thin  !scrollbar-thumb-lime-500;
+  }
+
   body {
-    background-color: #eafff7;
+    background-color: #f0f0f0;
   }
 }

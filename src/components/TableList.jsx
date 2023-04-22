@@ -35,6 +35,7 @@ const TableComponent = () => {
 
   const fetchDoctors = async (department) => {
     try {
+      setSelectedDoctor(null);
       const response = await fetch(
         `http://localhost:5000/doctors/${department}`
       );
@@ -95,9 +96,9 @@ const TableComponent = () => {
                       key={department.Dept_id}
                       className={`${
                         selectedDepartment === department.Dept_name
-                          ? "bg-gray-200"
+                          ? "bg-gradient-to-r from-lime-200"
                           : ""
-                      } cursor-pointer`}
+                      } cursor-pointer hover:bg-gray-100`}
                       onClick={() =>
                         handleDepartmentClick(department.Dept_name)
                       }
@@ -142,8 +143,13 @@ const TableComponent = () => {
                     {doctors.map((doctor) => (
                       <tr
                         key={doctor._id}
+                        className={`${
+                          selectedDoctor === doctor
+                            ? "bg-gradient-to-r from-lime-200"
+                            : ""
+                        } cursor-pointer hover:bg-gray-100`}
                         onClick={() => handleDoctorClick(doctor)}
-                        className="cursor-pointer"
+                        
                       >
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           {doctor.Doc_name}
