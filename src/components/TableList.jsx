@@ -48,6 +48,7 @@ const TableComponent = () => {
   useEffect(() => {
     const fetchAvailableDoctors = async () => {
       try {
+        setAvailableDoctors([]); // Reset previous data
         const response = await fetch(`http://localhost:5000/availability/${selectedDoctor.Doc_id}`);
         const data = await response.json();
         setAvailableDoctors(data);
@@ -60,7 +61,6 @@ const TableComponent = () => {
       fetchAvailableDoctors();
     }
   }, [selectedDoctor]);
-
 
   const handleDepartmentClick = (departmentName) => {
     console.log("selected department", departmentName);
