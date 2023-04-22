@@ -17,7 +17,7 @@ module.exports = (client) => {
   router.get('/doctors/:departmentName', async (req, res) => {
     try {
       const doctorsCollection = client.db('testdb').collection('doctors');
-      const doctors = await doctorsCollection.find({ department: req.params.departmentName }).toArray();
+      const doctors = await doctorsCollection.find({ dept_name: req.params.departmentName }).toArray();
       res.json(doctors);
     } catch (err) {
       console.error(err);

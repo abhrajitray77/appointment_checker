@@ -112,7 +112,7 @@ const TableComponent = () => {
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {doctors.map((doctor) => (
-                      <tr key={doctor.doc_id}>
+                      <tr key={doctor._id}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           {doctor.doc_name}
                         </td>
