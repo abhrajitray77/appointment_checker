@@ -33,7 +33,7 @@ const TableComponent = () => {
 
   const fetchDoctors = async (department) => {
     try{
-      const response = await fetch(`http://localhost:5000/doctors?department=${department}`)
+      const response = await fetch(`http://localhost:5000/doctors/${department}`);
       const data = await response.json()
       setDoctors(data);
     } catch (error) {
@@ -42,6 +42,7 @@ const TableComponent = () => {
   };
 
   const handleDepartmentClick = (departmentName) => {
+    console.log("selected department", departmentName)
     setSelectedDepartment(departmentName);
   };
 
@@ -65,16 +66,16 @@ const TableComponent = () => {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {departments.map((department) => (
                     <tr
-                      key={department._id}
+                      key={department.dept_id}
                       className={`${
                         selectedDepartment === department.name
                           ? "bg-gray-200"
                           : ""
                       } cursor-pointer`}
-                      onClick={() => handleDepartmentClick(department.name)}
+                      onClick={() => handleDepartmentClick(department.dept_name)}
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {department.name}
+                        {department.dept_name}
                       </td>
                     </tr>
                   ))}
@@ -111,12 +112,12 @@ const TableComponent = () => {
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {doctors.map((doctor) => (
-                      <tr key={doctor._id}>
+                      <tr key={doctor.doc_id}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          {doctor.name}
+                          {doctor.doc_name}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {doctor.id}
+                          {doctor.doc_id}
                         </td>
                       </tr>
                     ))}

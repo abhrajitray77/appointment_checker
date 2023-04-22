@@ -14,7 +14,7 @@ function App() {
         <Banner />
 
         <section>
-          <div className="w-[50%]">
+          <div className="w-[50%] mx-auto">
             <TableComponent />
 
           </div>

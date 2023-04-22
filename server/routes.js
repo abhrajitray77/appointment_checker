@@ -8,7 +8,6 @@ module.exports = (client) => {
       const departmentsCollection = client.db('testdb').collection('departments');
       const departments = await departmentsCollection.find({}).toArray();
       res.json(departments);
-      console.log("connected to db");
     } catch (err) {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
@@ -20,7 +19,6 @@ module.exports = (client) => {
       const doctorsCollection = client.db('testdb').collection('doctors');
       const doctors = await doctorsCollection.find({ department: req.params.departmentName }).toArray();
       res.json(doctors);
-      console.log("connected to db");
     } catch (err) {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
