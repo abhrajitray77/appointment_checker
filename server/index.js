@@ -1,14 +1,15 @@
-const express = require('express');
-const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
+const express = require('express');
+const cors = require('cors');
+
 const { MongoClient } = require('mongodb');
 
 const app = express();
 const port =  5000;
 
 // Initialize MongoDB client
-const uri = `mongodb+srv://abhrajitray77:dbmsproj2023@cluster0.l3zdfvv.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `${process.env.MONGO_URI}`
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Pass the MongoDB client to your routes
