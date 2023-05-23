@@ -3,9 +3,7 @@
 ## Description: 
 A simple website to view Doctor's schedule. Fetches data from a MongoDB database.
 
-![Screenshot 2023-04-22 23-27-06](https://user-images.githubusercontent.com/67530432/233822038-1c725ff9-9d04-46b8-af1b-e5fb312f0b74.png)
-
-![Screenshot 2023-04-22 23-28-26](https://user-images.githubusercontent.com/67530432/233822035-34700f7a-0aa3-49d0-a4be-ca4e466ab36e.png)
+[](https://github.com/abhrajitray77/appointment_checker/assets/67530432/ccc3a742-ada3-4877-a6ca-5e42ecd95758)
 
 ## Tech stack:
 
